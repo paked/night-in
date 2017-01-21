@@ -14,11 +14,8 @@ public class ActionableTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		var ray = new Ray(cam.transform.position, cam.transform.forward * 10);
 		var hit = new RaycastHit();
-
-
 
 		if(!Physics.Raycast (ray, out hit)) {
 			// Debug.Log ("Did not hit anything");

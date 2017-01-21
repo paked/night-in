@@ -9,6 +9,7 @@ public class ItemActionable : Actionable {
 	private float next = 0;
 
 	override public void DoAction() {
+		
 		Debug.Log ("Actionable is triggered, time.time is "
 			+Time.time+" nextAction occurs at "+next);
 		if (Time.time > next) {

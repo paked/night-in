@@ -5,7 +5,8 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour {
 	[SerializeField]
 	public GameObject[] ghostItems;
-	//public int itemsInBatch;
+
+	public GameController gameController;
 
 	private int visibleItemCount = 0;
 
@@ -17,6 +18,8 @@ public class ItemSpawner : MonoBehaviour {
 	}
 
 	public void SpawnItem() {
+		gameController.ShiftToReality ();
+
 		Debug.Log ("Spawning "+transform.gameObject.name);
 		ghostItems [visibleItemCount].SetActive (true);
 		visibleItemCount++;
