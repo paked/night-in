@@ -5,35 +5,39 @@ using UnityEngine;
 public class ActionableTrigger : MonoBehaviour {
 	public Camera cam;
 
+	private LineRenderer lr;
+
 	void Start() {
 		cam = Camera.main;
+		lr = GetComponent<LineRenderer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		var ray = new Ray(cam.transform.position, cam.transform.forward);
+
+		// Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+		// Debug.DrawRay(cam.transform.position, forward, Color.green)
+
+		var ray = new Ray(cam.transform.position, cam.transform.forward * 10);
 		var hit = new RaycastHit();
 
+
 		if(!Physics.Raycast (ray, out hit)) {
-			Debug.Log ("Did not hit anything");
+			// Debug.Log ("Did not hit anything");
 			return;
 		}
 
+		lr.SetPosition(0, transform.position);
+		lr.SetPosition(1, hit.transform.position);
+
+		Debug.DrawRay(cam.transform.position, hit.transform.position);
+
 		var actionable = hit.transform.GetComponent<Actionable> ();
 		if (actionable == null) {
-			Debug.Log ("Object is not an Actionable");
+			Debug.Log (hit.transform.name + " is not an Actionable");
 			return;
 		}
 
 		actionable.DoAction ();
-//
-//		Debug.Log (hit.transform.name + " was hit!");
-//		var newPos = new Vector3 (
-//			hit.transform.position.x,
-//			hit.transform.position.y + 2f * Time.deltaTime,
-//			hit.transform.position.z
-//		);
-//
-//		hit.transform.position = newPos;
 	}
 }
