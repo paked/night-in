@@ -27,9 +27,6 @@ public class ActionableTrigger : MonoBehaviour {
 			return;
 		}
 
-		lr.SetPosition(0, transform.position);
-		lr.SetPosition(1, hit.transform.position);
-
 		Debug.DrawRay(cam.transform.position, hit.transform.position);
 
 		var actionable = hit.transform.GetComponent<Actionable> ();
