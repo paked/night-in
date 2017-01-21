@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour {
 	public GvrAudioSource crowdAudioSource;
 	public GvrAudioSource aloneAudioSource;
 
+	public LampController ceilController;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,6 +19,9 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void ShiftToReality() {
+		Debug.Log (ceilController.gameObject.name);
+		ceilController.DesaturateAll (0.1f);
+
 		var cOld = crowdAudioSource.transform.position;
 		cOld.x += 0.5f;
 

@@ -1422,7 +1422,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 610269470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8861e4d789e7f498dad651407d21b5c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 40493d22d0f6c4bde815de288bbf63eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 0, b: 0.8068962, a: 0}
@@ -1537,6 +1537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crowdAudioSource: {fileID: 575889320}
   aloneAudioSource: {fileID: 635076441}
+  ceilController: {fileID: 610269472}
 --- !u!4 &640350952
 Transform:
   m_ObjectHideFlags: 0
