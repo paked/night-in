@@ -1308,6 +1308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8861e4d789e7f498dad651407d21b5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color1: {r: 1, g: 0, b: 0.8068962, a: 0}
+  color2: {r: 0, g: 1, b: 0.95862055, a: 0}
+  offset: 2
 --- !u!1001 &615036666
 Prefab:
   m_ObjectHideFlags: 0
@@ -1403,8 +1406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fc6166fd96f4f9285d6fe54c5c2a52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crowdAudioSource: {fileID: 1147341028}
-  aloneAudioSource: {fileID: 853892282}
+  crowdAudioSource: {fileID: 0}
+  aloneAudioSource: {fileID: 0}
 --- !u!4 &640350952
 Transform:
   m_ObjectHideFlags: 0
@@ -1540,12 +1543,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d957f4f9ed7140488ff4424e46d19f6, type: 3}
   m_IsPrefabParent: 0
---- !u!114 &853892282 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11461060, guid: 82b70a42d67ea49d4a2e3bd826e9a512,
-    type: 2}
-  m_PrefabInternal: {fileID: 370555489}
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
 --- !u!1001 &883657588
 Prefab:
   m_ObjectHideFlags: 0
@@ -2246,12 +2243,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82b70a42d67ea49d4a2e3bd826e9a512, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1147341028 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11461060, guid: 82b70a42d67ea49d4a2e3bd826e9a512,
-    type: 2}
-  m_PrefabInternal: {fileID: 1147341027}
-  m_Script: {fileID: 11500000, guid: 6dbca64e524ea44f9b26142ec59aca8a, type: 3}
 --- !u!1001 &1174592515
 Prefab:
   m_ObjectHideFlags: 0
@@ -2663,7 +2654,7 @@ MonoBehaviour:
   - {fileID: 1223923630}
   - {fileID: 761025725}
   - {fileID: 2065149905}
-  gameController: {fileID: 640350951}
+  gameController: {fileID: 0}
 --- !u!4 &1279788840
 Transform:
   m_ObjectHideFlags: 0
@@ -2948,7 +2939,7 @@ MonoBehaviour:
   - {fileID: 1634412600}
   - {fileID: 1077210723}
   - {fileID: 1137320550}
-  gameController: {fileID: 640350951}
+  gameController: {fileID: 0}
 --- !u!4 &1500250359
 Transform:
   m_ObjectHideFlags: 0
@@ -3424,7 +3415,7 @@ MonoBehaviour:
   - {fileID: 1644103507}
   - {fileID: 434314907}
   - {fileID: 466431753}
-  gameController: {fileID: 640350951}
+  gameController: {fileID: 0}
 --- !u!4 &1954656957
 Transform:
   m_ObjectHideFlags: 0
