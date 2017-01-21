@@ -15,17 +15,18 @@ public class ActionableTrigger : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		// Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
-		// Debug.DrawRay(cam.transform.position, forward, Color.green)
-
 		var ray = new Ray(cam.transform.position, cam.transform.forward * 10);
 		var hit = new RaycastHit();
+
 
 
 		if(!Physics.Raycast (ray, out hit)) {
 			// Debug.Log ("Did not hit anything");
 			return;
 		}
+
+		lr.SetPosition(0, transform.position);
+		lr.SetPosition(1, hit.transform.position);
 
 		Debug.DrawRay(cam.transform.position, hit.transform.position);
 
