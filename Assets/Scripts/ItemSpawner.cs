@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour {
 	[SerializeField]
-	public GameObject[] ghostItems;
+	public ItemActionable[] ghostItems;
 
 	public GameController gameController;
 
@@ -13,15 +13,20 @@ public class ItemSpawner : MonoBehaviour {
 	void Start () {
 		// Disable all glasses.
 		foreach (var item in ghostItems) {
-			item.SetActive (false);
+			item.gameObject.SetActive (false);
 		}
 	}
 
 	public void SpawnItem() {
 		gameController.ShiftToReality ();
 
+		if (visibleItemCount > ghostItems.Length - 1) {
+			return;
+		}
+
 		Debug.Log ("Spawning "+transform.gameObject.name);
-		ghostItems [visibleItemCount].SetActive (true);
+		ghostItems [visibleItemCount].gameObject.SetActive (true);
+		ghostItems [visibleItemCount].spawner = this;
 		visibleItemCount++;
 	}
 }
