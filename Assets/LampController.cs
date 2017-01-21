@@ -33,6 +33,6 @@ public class LampController : MonoBehaviour {
 
 	void ChangeLightSettings(Light light, Color color, float amp) {
 		light.color = color;
-		light.intensity = Mathf.Cos(amp) + 0.5f; // at least .5 intensity
+		light.intensity = Mathf.Cos(amp) + 1.5f; // at least .5 intensity
 	}
 }
