@@ -36,9 +36,9 @@ public class LampController : MonoBehaviour {
 	}
 
 	public void DesaturateAll (float desaturation) {
-		color1 = Desaturate (color1, desaturation);//Time.deltaTime);
-		color2 = Desaturate (color2, desaturation);//Time.deltaTime);
-		Debug.Log(color1+ " " + color2);
+		color1 = Desaturate (color1, desaturation);
+		color2 = Desaturate (color2, desaturation);
+		//Debug.Log(color1+ " " + color2);
 	}
 
 	Color Desaturate(Color color, float desaturation) {
@@ -46,7 +46,6 @@ public class LampController : MonoBehaviour {
 		float s;
 		float v;
 		Color.RGBToHSV (color, out h, out s, out v);
-		Debug.Log (""+desaturation +" "+ h + " "+s+ " "+v);
 
 		return Color.HSVToRGB (h, Mathf.Max (0f, s - desaturation), v);
 	}

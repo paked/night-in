@@ -10,18 +10,27 @@ public class GameController : MonoBehaviour {
 
 	public LampController ceilController;
 
+	private float intoxicated;
+
+	public GameObject head;
+	private float nextHead;
+
 	// Use this for initialization
 	void Start () {
-		
+		intoxicated = 1f; // start off at max intoxication
+		nextHead = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (intoxicated > .5f) {
+			float spawnRate = (1-intoxicated)*10;
+			SpawnHeads (spawnRate);
+		}
 	}
 
 	public void ShiftToReality() {
-		Debug.Log (ceilController.gameObject.name);
+		intoxicated -= 0.1f;
 		ceilController.DesaturateAll (0.1f);
 
 		var cOld = crowdAudioSource.transform.position;
@@ -34,6 +43,15 @@ public class GameController : MonoBehaviour {
 			aOld.x += 0.3f;
 
 			aloneAudioSource.transform.position = aOld;
+		}
+	}
+
+	// not sure if this needs to be public actually
+	public void SpawnHeads(float rate) {
+		if (Time.time > nextHead) {
+			// spawn heads depending on party mood (more partymood = more heads) "intoxicated"
+			Instantiate (head);
+			nextHead += Time.time + rate;
 		}
 	}
 }
