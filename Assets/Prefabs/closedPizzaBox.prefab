@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4464137799163018}
   - component: {fileID: 95055004412097362}
   - component: {fileID: 65900690323181762}
+  - component: {fileID: 54125250397179920}
   m_Layer: 0
   m_Name: closedPizzaBox
   m_TagString: Untagged
@@ -179,6 +180,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1761060813166122}
   m_Mesh: {fileID: 4300002, guid: 57a6a24a3a30a473599ffc261ddce315, type: 3}
+--- !u!54 &54125250397179920
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170846063670782}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65900690323181762
 BoxCollider:
   m_ObjectHideFlags: 1
