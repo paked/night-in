@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-	public GvrAudioSource crowdAudioSource;
-	public GvrAudioSource aloneAudioSource;
+	//public GvrAudioSource crowdAudioSource;
+	public AudioSource crowdAudioSource;
+	//public GvrAudioSource aloneAudioSource;
+	public AudioSource aloneAudioSource;
 
 	public LampController ceilController;
 
