@@ -25,9 +25,13 @@ public class LampController : MonoBehaviour {
 		// change colors of every lamp
 		for (int i = 0; i < lights.Count; i++) {
 			Light l = lights[i];
-			Color lColor = (i%3 == 0) ? color1 : color2;
-
-			ChangeLightSettings (l, lColor, Time.time * offset);
+			if (i % 2 == 0) {
+				l.color = color1;
+				l.intensity = Mathf.Sin (Time.time * offset) + 1.5f;
+			} else {
+				l.color = color2;
+				l.intensity = Mathf.Cos (Time.time * offset) + 1.5f;
+			}
 		}
 	}
 
@@ -45,10 +49,5 @@ public class LampController : MonoBehaviour {
 		Debug.Log (""+desaturation +" "+ h + " "+s+ " "+v);
 
 		return Color.HSVToRGB (h, Mathf.Max (0f, s - desaturation), v);
-	}
-
-	void ChangeLightSettings(Light light, Color color, float amp) {
-		light.color = color;
-		light.intensity = Mathf.Cos(amp) + 1.5f; // at least .5 intensity
 	}
 }
