@@ -6,9 +6,12 @@ public class ItemSpawner : MonoBehaviour {
 	[SerializeField]
 	public ItemActionable[] ghostItems;
 
+	private float cooldown = 0.9f;
 	public GameController gameController;
 
+	private float next = 0;
 	private int visibleItemCount = 0;
+
 
 	void Start () {
 		// Disable all glasses.
@@ -18,15 +21,19 @@ public class ItemSpawner : MonoBehaviour {
 	}
 
 	public void SpawnItem() {
-		gameController.ShiftToReality ();
+		if (Time.time > next) {
+			gameController.ShiftToReality ();
 
-		if (visibleItemCount > ghostItems.Length - 1) {
-			return;
+			if (visibleItemCount > ghostItems.Length - 1) {
+				return;
+			}
+
+			Debug.Log ("Spawning "+transform.gameObject.name);
+			ghostItems [visibleItemCount].gameObject.SetActive (true);
+			ghostItems [visibleItemCount].spawner = this;
+			visibleItemCount++;
+
+			next = Time.time + cooldown;
 		}
-
-		Debug.Log ("Spawning "+transform.gameObject.name);
-		ghostItems [visibleItemCount].gameObject.SetActive (true);
-		ghostItems [visibleItemCount].spawner = this;
-		visibleItemCount++;
 	}
 }

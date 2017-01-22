@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a881f4fbb747c415c9e56586e7b21355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!1001 &115216168
 Prefab:
   m_ObjectHideFlags: 0
@@ -710,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   downsample: 1
-  blurSize: 0.5
+  blurSize: 0
   blurIterations: 2
   blurType: 0
   blurShader: {fileID: 4800000, guid: f9d5fa183cd6b45eeb1491f74863cd91, type: 3}
@@ -2393,6 +2394,11 @@ Prefab:
       propertyPath: m_Name
       value: clock
       objectReference: {fileID: 0}
+    - target: {fileID: 114242911242491852, guid: 5fd03d57f2c31407baf8c91d78fc6c52,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 640350951}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fd03d57f2c31407baf8c91d78fc6c52, type: 2}
   m_IsPrefabParent: 0

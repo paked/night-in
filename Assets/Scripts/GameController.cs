@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 
 public class GameController : MonoBehaviour {
 	//public GvrAudioSource crowdAudioSource;
@@ -15,9 +16,13 @@ public class GameController : MonoBehaviour {
 	public GameObject head;
 	private float nextHead;
 
+	private Camera cam;
+
 	// Use this for initialization
 	void Start () {
 		nextHead = 0f;
+
+		cam = Camera.main;
 	}
 	
 	// Update is called once per frame
@@ -33,6 +38,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void ShiftToReality() {
+		blurOnAction ();
 		intoxicated -= 0.1f;
 		ceilController.DesaturateAll (0.1f);
 
@@ -56,5 +62,22 @@ public class GameController : MonoBehaviour {
 			Instantiate (head);
 			nextHead += Time.time + rate;
 		}
+	}
+
+	public void blurOnAction() {
+		StartCoroutine (Blur());
+	}
+
+	public IEnumerator Blur() {
+		var bo = cam.GetComponent<BlurOptimized> ();
+		bo.enabled = true;
+
+		for (int i = 0; i < 180 * intoxicated; i++) {
+			bo.blurSize = Mathf.Sin (Time.time)*3 + 1.5f;
+			yield return 0;
+		}
+
+		bo.enabled = false;
+		yield return null;
 	}
 }
