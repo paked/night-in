@@ -917,7 +917,7 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 186633032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 0
@@ -1183,7 +1183,7 @@ MeshCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 196045586}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 1
@@ -2393,35 +2393,35 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 701982488}
     m_Modifications:
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.94
       objectReference: {fileID: 0}
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_LocalPosition.z
       value: 2.757
       objectReference: {fileID: 0}
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
+    - target: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19, type: 2}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
@@ -2430,7 +2430,7 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &827303645 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4817722031817524, guid: 16709eff6fbaa48c280a6c3f6d7bfb19,
+  m_PrefabParentObject: {fileID: 4541282412646272, guid: 16709eff6fbaa48c280a6c3f6d7bfb19,
     type: 2}
   m_PrefabInternal: {fileID: 827303644}
 --- !u!1001 &883657588
@@ -3384,7 +3384,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -3483,7 +3483,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -3900,7 +3900,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -4666,7 +4666,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
@@ -5823,7 +5823,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

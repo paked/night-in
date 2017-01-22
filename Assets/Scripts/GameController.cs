@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour {
 
 	public void ShiftToReality() {
 		blurOnAction ();
-		intoxicated -= 0.1f;
+		intoxicated -= 0.03f;
 		ceilController.DesaturateAll (0.1f);
 
 		var cOld = crowdAudioSource.transform.position;
@@ -72,8 +72,8 @@ public class GameController : MonoBehaviour {
 		var bo = cam.GetComponent<BlurOptimized> ();
 		bo.enabled = true;
 
-		for (int i = 0; i < 180 * intoxicated; i++) {
-			bo.blurSize = Mathf.Sin (Time.time)*3 + 1.5f;
+		for (int i = 0; i < 180; i++) {
+			bo.blurSize = (Mathf.Sin (Time.time)*3 + 1.5f) * intoxicated;
 			yield return 0;
 		}
 
