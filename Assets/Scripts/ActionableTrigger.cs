@@ -29,7 +29,7 @@ public class ActionableTrigger : MonoBehaviour {
 
 		var actionable = hit.transform.GetComponent<Actionable> ();
 		if (actionable == null) {
-			Debug.Log (hit.transform.name + " is not an Actionable");
+			//Debug.Log (hit.transform.name + " is not an Actionable");
 			return;
 		}
 

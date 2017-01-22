@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClockController : MonoBehaviour {
 
+	public GameController gameController;
+
 	private Transform hourH;
 	private Transform minH;
 	private Transform secH;
@@ -22,28 +24,13 @@ public class ClockController : MonoBehaviour {
 		secH = transform.FindChild("secondHand");
 
 		hourRate = 6;
-		minRate = 10;
-		secRate = 1;
+		minRate = 6;
+		secRate = gameController.GetIntoxicationLevel(); // time flies when you're having fun
 	}
 
-
-
-	void moveHour() {
+	void Update() {
 		hourH.rotation *= Quaternion.AngleAxis (secRate/(minRate*hourRate), Vector3.down);
-	}
-
-	void moveMin() {
 		minH.rotation *= Quaternion.AngleAxis (secRate/minRate, Vector3.down);
-	}
-
-	void moveSec() {
 		secH.rotation *= Quaternion.AngleAxis (secRate, Vector3.down);
-	}
-	// Update is called once per frame
-	void Update () {
-		moveHour ();
-		moveMin ();
-		moveSec ();
-		//Time.deltaTime);
 	}
 }

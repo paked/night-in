@@ -10,14 +10,13 @@ public class GameController : MonoBehaviour {
 
 	public LampController ceilController;
 
-	private float intoxicated;
+	private float intoxicated = 1f; // start off at max intoxication
 
 	public GameObject head;
 	private float nextHead;
 
 	// Use this for initialization
 	void Start () {
-		intoxicated = 1f; // start off at max intoxication
 		nextHead = 0f;
 	}
 	
@@ -27,6 +26,10 @@ public class GameController : MonoBehaviour {
 			float spawnRate = (1-intoxicated)*10;
 			SpawnHeads (spawnRate);
 		}
+	}
+
+	public float GetIntoxicationLevel() {
+		return intoxicated;
 	}
 
 	public void ShiftToReality() {
