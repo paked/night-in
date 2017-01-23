@@ -1,38 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tobii.EyeTracking;
 
 public class ActionableTrigger : MonoBehaviour {
 	public Camera cam;
 
 	private LineRenderer lr;
 
-	void Start() {
+    private GazePoint gazePoint;
+    private Transform lookAtTarget;
+
+    void Start() {
 		cam = Camera.main;
 		lr = GetComponent<LineRenderer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		var ray = new Ray(cam.transform.position, cam.transform.forward * 10);
-		var hit = new RaycastHit();
+        gazePoint = EyeTracking.GetGazePoint();
 
-		if(!Physics.Raycast (ray, out hit)) {
-			// Debug.Log ("Did not hit anything");
-			return;
-		}
+        if (EyeTracking.GetGazeTrackingStatus().IsTrackingEyeGaze)
+        {
+            Debug.Log("Hey! I'm loggging here.");
+            var ray = Camera.main.ScreenPointToRay(new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, 0));
+            var hit = new RaycastHit();
 
-		lr.SetPosition(0, transform.position);
-		lr.SetPosition(1, hit.transform.position);
+            if (!Physics.Raycast(ray, out hit))
+            {
+                Debug.Log ("Did not hit anything");
 
-		Debug.DrawRay(cam.transform.position, hit.transform.position);
+                return;
+            }
 
-		var actionable = hit.transform.GetComponent<Actionable> ();
-		if (actionable == null) {
-			//Debug.Log (hit.transform.name + " is not an Actionable");
-			return;
-		}
+            lr.SetPosition(0, transform.position);
+            lr.SetPosition(1, hit.transform.position);
 
-		actionable.DoAction ();
-	}
+            Debug.DrawRay(cam.transform.position, hit.transform.position);
+
+            var actionable = hit.transform.GetComponent<Actionable>();
+            if (actionable == null)
+            {
+                Debug.Log (hit.transform.name + " is not an Actionable");
+                return;
+            }
+
+            actionable.DoAction();
+        }
+    }
 }

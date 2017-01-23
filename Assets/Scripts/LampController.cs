@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LampController : MonoBehaviour {
-
 	public Color color1;
 	public Color color2;
-	public float offset;
+
+    public float amp;
+    public float flashing;
 
 	private List<Light> lights;
 
@@ -27,10 +28,10 @@ public class LampController : MonoBehaviour {
 			Light l = lights[i];
 			if (i % 2 == 0) {
 				l.color = color1;
-				l.intensity = Mathf.Sin (Time.time * offset) + 1.5f;
+				l.intensity = amp * Mathf.Sin (Time.time * flashing) + 1.5f;
 			} else {
 				l.color = color2;
-				l.intensity = Mathf.Cos (Time.time * offset) + 1.5f;
+				l.intensity = amp * Mathf.Sin (Mathf.PI/2-Time.time * flashing) + 1.5f;
 			}
 		}
 	}
@@ -38,7 +39,8 @@ public class LampController : MonoBehaviour {
 	public void DesaturateAll (float desaturation) {
 		color1 = Desaturate (color1, desaturation);
 		color2 = Desaturate (color2, desaturation);
-		//Debug.Log(color1+ " " + color2);
+
+        amp = Mathf.Exp(-Time.time*desaturation);
 	}
 
 	Color Desaturate(Color color, float desaturation) {

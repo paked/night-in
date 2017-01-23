@@ -6,7 +6,7 @@ public class ItemSpawner : MonoBehaviour {
 	[SerializeField]
 	public ItemActionable[] ghostItems;
 
-	private float cooldown = 0.9f;
+	private float cooldown = 1.5f;
 	public GameController gameController;
 
 	private float next = 0;
@@ -28,7 +28,7 @@ public class ItemSpawner : MonoBehaviour {
 				return;
 			}
 
-			Debug.Log ("Spawning "+transform.gameObject.name);
+			Debug.Log ("Spawning "+ghostItems[visibleItemCount].name);
 			ghostItems [visibleItemCount].gameObject.SetActive (true);
 			ghostItems [visibleItemCount].spawner = this;
 			visibleItemCount++;

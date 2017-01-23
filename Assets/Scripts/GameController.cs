@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
 	public LampController ceilController;
 
 	private float intoxicated = 1f; // start off at max intoxication
+    public ParticleSystem smoke1;
+    public ParticleSystem smoke2;
 
 	public GameObject head;
 	private float nextHead;
@@ -31,7 +33,23 @@ public class GameController : MonoBehaviour {
 			float spawnRate = (1-intoxicated)*10;
 			SpawnHeads (spawnRate);
 		}
-	}
+
+        if (intoxicated < 0.7f)
+        {
+            smoke1.gameObject.SetActive(false);
+            smoke2.gameObject.SetActive(false);
+        }
+
+        if (intoxicated < 0.3f)
+        {
+            ceilController.amp /= 2;
+        }
+
+        if (intoxicated < 0.15f)
+        {
+            ceilController.amp = 0;
+        }
+    }
 
 	public float GetIntoxicationLevel() {
 		return intoxicated;
@@ -39,8 +57,8 @@ public class GameController : MonoBehaviour {
 
 	public void ShiftToReality() {
 		blurOnAction ();
-		intoxicated -= 0.03f;
-		ceilController.DesaturateAll (0.1f);
+		intoxicated -= 0.015f;
+		ceilController.DesaturateAll (0.03f);
 
 		var cOld = crowdAudioSource.transform.position;
 		cOld.x += 0.5f;
